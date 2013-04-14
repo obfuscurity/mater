@@ -6,7 +6,41 @@ Mater (short for _maître d'_) provides a translation service (and rudimentary A
 
 ## API Reference
 
-TBD
+Each Graphite `target` response is treated as a Status Board `datasequence`. It will use the target name as the source for the datasequence `title`, so you'll typically want to apply a Graphite [alias](http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.alias) for something user-friendly.
+
+Sample URI:
+`/render/?from=-1mins&target=aliasByNode(collectd.graphite-example-com.*.cpu-user.value,2)&title=User%20CPU&format=json`
+
+Sample Response:
+```
+{
+  "graph" : {
+    "title" : "User CPU",
+    "datasequences" : [
+      {
+        "title" : "cpu-0",
+        "datapoints" : [
+          { "title" : "1365907060", "value" : 0.0 },
+          { "title" : "1365907070", "value" : 0.01 },
+          { "title" : "1365907080", "value" : 0.08 },
+          { "title" : "1365907090", "value" : 0.0 },
+          { "title" : "1365907100", "value" : 0.0 },
+        ]
+      },
+      {
+        "title" : "cpu-1",
+        "datapoints" : [
+          { "title" : "1365907060", "value" : 0.1 },
+          { "title" : "1365907070", "value" : 0.06 },
+          { "title" : "1365907080", "value" : 0.0 },
+          { "title" : "1365907090", "value" : 0.1 },
+          { "title" : "1365907100", "value" : 0.1 },
+        ]
+      }
+    ]
+  }
+}
+```
 
 ## Configuration
 
