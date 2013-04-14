@@ -23,7 +23,7 @@ module Mater
         target['datapoints'].each do |datapoint|
           datapoints << {
             "title" => datapoint[1].to_s,
-            "value" => datapoint[0]
+            "value" => datapoint[0].to_i
           }
         end
         target['datapoints'] = datapoints
