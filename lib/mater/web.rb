@@ -30,6 +30,7 @@ module Mater
       end
       result = {
         'graph' => {
+          'type' => 'line',
           'title' => params['title'],
           'datasequences' => data
         }
