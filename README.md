@@ -52,14 +52,6 @@ Sample Response:
 }
 ```
 
-## Caveats
-
-Status Board is still fairly dumb in its ability to process data. For example, it won't accept float values so we have to convert our data to whole numbers. As I uncover other oddities they will be mentioned here.
-
-## Configuration
-
-Beyond setting some environment variables, Mater is designed to be "configuration-free". It handles requests from a Status Board client, proxies the request to a Graphite server, and reformats the response to comply with the client's JSON format.
-
 ## Deployment
 
 The only required environment variable is `GRAPHITE_URL`. This should be set to the base URL of your Graphite composer (e.g. `https://graphite.yourdomain.com`). If your server requires Basic Auth, you can set the `GRAPHITE_AUTH` variable (e.g. `username:password`).
@@ -85,6 +77,10 @@ $ git push $DEPLOY master
 $ heroku scale -r $DEPLOY web=1
 $ heroku open -r $DEPLOY
 ```
+
+## Caveats
+
+Status Board is still fairly dumb in its ability to process data. For example, it won't accept float values so we have to convert our data to whole numbers. As I uncover other oddities they will be mentioned here.
 
 ## License 
 
