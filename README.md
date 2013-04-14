@@ -24,21 +24,21 @@ Sample Response:
       {
         "title" : "cpu-0",
         "datapoints" : [
-          { "title" : "1365907060", "value" : 0 },
-          { "title" : "1365907070", "value" : 0 },
-          { "title" : "1365907080", "value" : 1 },
-          { "title" : "1365907090", "value" : 0 },
-          { "title" : "1365907100", "value" : 0 },
+          { "title" : "02:37", "value" : 0 },
+          { "title" : "02:37", "value" : 0 },
+          { "title" : "02:37", "value" : 1 },
+          { "title" : "02:37", "value" : 0 },
+          { "title" : "02:38", "value" : 0 },
         ]
       },
       {
         "title" : "cpu-1",
         "datapoints" : [
-          { "title" : "1365907060", "value" : 0 },
-          { "title" : "1365907070", "value" : 0 },
-          { "title" : "1365907080", "value" : 0 },
-          { "title" : "1365907090", "value" : 0 },
-          { "title" : "1365907100", "value" : 0 },
+          { "title" : "02:37", "value" : 0 },
+          { "title" : "02:37", "value" : 0 },
+          { "title" : "02:37", "value" : 0 },
+          { "title" : "02:37", "value" : 0 },
+          { "title" : "02:38", "value" : 0 },
         ]
       }
     ]
