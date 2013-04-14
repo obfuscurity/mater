@@ -46,6 +46,10 @@ Sample Response:
 }
 ```
 
+## Caveats
+
+Status Board is still fairly dumb in its ability to process data. For example, it won't accept float values so we have to convert our data to whole numbers. As I uncover other oddities they will be mentioned here.
+
 ## Configuration
 
 Beyond setting some environment variables, Mater is designed to be "configuration-free". It handles requests from a Status Board client, proxies the request to a Graphite server, and reformats the response to comply with the client's JSON format.
