@@ -1,4 +1,3 @@
-$:.unshift File.dirname(__FILE__) + '/lib'
-require 'mater/web'
+require './app'
 
 run Mater::Web
