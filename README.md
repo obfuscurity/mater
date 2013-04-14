@@ -8,7 +8,7 @@ Mater (short for _maître d'_) provides a translation service (and rudimentary A
 
 ## API Reference
 
-Each Graphite `target` response is treated as a Status Board `datasequence`. It will use the target name as the source for the datasequence `title`, so you'll typically want to apply a Graphite [alias](http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.alias) for something user-friendly.
+Each Graphite `target` response is treated as a Status Board `datasequence`. It will use the target name as the source for the datasequence `title`, so you'll typically want to apply a Graphite [alias](http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.alias) for something user-friendly. Set your Graphite `title` param and it will bubble up to your Status Board graph title.
 
 Sample URI:
 `/render/?from=-1mins&target=aliasByNode(collectd.graphite-example-com.*.cpu-user.value,2)&title=User%20CPU&format=json`
