@@ -21,7 +21,7 @@ module Mater
       end
     end
 
-    get '/render/' do
+    get '/render/?' do
       data = JSON.parse(RestClient.get("#{ENV['GRAPHITE_URL']}#{request.env['REQUEST_URI']}"))
       data.each do |target|
         target['title'] = target['target']
