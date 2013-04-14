@@ -15,6 +15,12 @@ module Mater
       content_type :json
     end
 
+    if ENV['MATER_AUTH']
+      use Rack::Auth::Basic, "Restricted Area" do |username, password|
+          [username, password] == ENV['MATER_AUTH'].split(':')
+      end
+    end
+
     get '/render/' do
       data = JSON.parse(RestClient.get("#{ENV['GRAPHITE_URL']}#{request.env['REQUEST_URI']}"))
       data.each do |target|
