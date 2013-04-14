@@ -11,14 +11,35 @@ module Mater
     end
 
     before do
+      content_type :json
     end
 
     get '/render/' do
-      #erb :index, :locals => { :device => 'Home' }
+      data = JSON.parse(RestClient.get("#{ENV['GRAPHITE_URL']}#{request.env['REQUEST_URI']}"))
+      data.each do |target|
+        target['title'] = target['target']
+        target.delete('target')
+        datapoints = []
+        target['datapoints'].each do |datapoint|
+          datapoints << {
+            "title" => datapoint[1],
+            "value" => datapoint[0]
+          }
+        end
+        target['datapoints'] = datapoints
+      end
+      result = {
+        'graph' => {
+          'title' => params['title'],
+          'datasequences' => data
+        }
+      }
+      200
+      data.to_json
     end
 
     get '/health' do
-      content_type :json
+      200
       {'status' => 'ok'}.to_json
     end
   end
