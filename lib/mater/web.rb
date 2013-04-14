@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'uri'
 require 'rest-client'
+require 'time'
 require 'json'
 
 module Mater
@@ -21,8 +22,9 @@ module Mater
         target.delete('target')
         datapoints = []
         target['datapoints'].each do |datapoint|
+          time = Time.at(datapoint[1]).to_time.to_s.split[1].gsub(/\:\d{2}$/, '')
           datapoints << {
-            "title" => datapoint[1].to_s,
+            "title" => time,
             "value" => datapoint[0].to_i
           }
         end
