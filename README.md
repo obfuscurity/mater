@@ -14,7 +14,7 @@ Take the Graphite URL that you want to view on Status Board and replace its Grap
 
 ### API Overview
 
-Each Graphite `target` response is treated as a Status Board `datasequence`. It will use the target name as the source for the datasequence `title`, so you'll typically want to apply a Graphite [alias](http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.alias) for something user-friendly. Set your Graphite `title` param and it will bubble up to your Status Board graph title.
+Each Graphite JSON object (comprised of a `target` and `datapoints`) response is treated as a Status Board `datasequence`. It will use the target name for the datasequence `title`, so you'll typically want to apply a Graphite [alias](http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.alias) for something user-friendly. Set your Graphite `title` param and it will bubble up to your Status Board graph title.
 
 Sample URI:
 ```
