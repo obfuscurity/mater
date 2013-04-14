@@ -35,7 +35,7 @@ module Mater
         }
       }
       200
-      data.to_json
+      result.to_json
     end
 
     get '/health' do
