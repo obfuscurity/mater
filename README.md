@@ -56,11 +56,14 @@ Sample Response:
 
 The only required environment variable is `GRAPHITE_URL`. This should be set to the base URL of your Graphite composer (e.g. `https://graphite.example.com`). If your server requires Basic Auth, add these to your `GRAPHITE_URL` (e.g. `https://user:pass@graphite.example.com`).
 
+Mater supports optional Basic Authentication through Rack::Auth::Basic. Simply set `MATER_AUTH` to your colon-delimited credentials (e.g. `user:test`).
+
 ### Development
 
 ```bash
 $ bundle install
 $ export GRAPHITE_URL=...
+$ export MATER_AUTH=... (optional)
 $ foreman start
 ```
 
@@ -70,6 +73,7 @@ $ foreman start
 $ export DEPLOY=production/staging/you
 $ heroku create -r $DEPLOY mater-$DEPLOY
 $ heroku config:set -r $DEPLOY GRAPHITE_URL=...
+$ heroku config:set -r $DEPLOY MATER_AUTH=... (optional)
 $ git push $DEPLOY master
 ```
 
