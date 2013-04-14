@@ -1,5 +1,7 @@
 # Mater
 
+![screenshot](https://raw.github.com/obfuscurity/mater/master/images/screenshot.png)
+
 ## Overview
 
 Mater (short for _maître d'_) provides a translation service (and rudimentary API) between the Status Board [JSON format](http://www.panic.com/statusboard/docs/graph_tutorial.pdf) for Graphs, and the Graphite API.
@@ -20,21 +22,21 @@ Sample Response:
       {
         "title" : "cpu-0",
         "datapoints" : [
-          { "title" : "1365907060", "value" : 0.0 },
-          { "title" : "1365907070", "value" : 0.01 },
-          { "title" : "1365907080", "value" : 0.08 },
-          { "title" : "1365907090", "value" : 0.0 },
-          { "title" : "1365907100", "value" : 0.0 },
+          { "title" : "1365907060", "value" : 0 },
+          { "title" : "1365907070", "value" : 0 },
+          { "title" : "1365907080", "value" : 1 },
+          { "title" : "1365907090", "value" : 0 },
+          { "title" : "1365907100", "value" : 0 },
         ]
       },
       {
         "title" : "cpu-1",
         "datapoints" : [
-          { "title" : "1365907060", "value" : 0.1 },
-          { "title" : "1365907070", "value" : 0.06 },
-          { "title" : "1365907080", "value" : 0.0 },
-          { "title" : "1365907090", "value" : 0.1 },
-          { "title" : "1365907100", "value" : 0.1 },
+          { "title" : "1365907060", "value" : 0 },
+          { "title" : "1365907070", "value" : 0 },
+          { "title" : "1365907080", "value" : 0 },
+          { "title" : "1365907090", "value" : 0 },
+          { "title" : "1365907100", "value" : 0 },
         ]
       }
     ]
