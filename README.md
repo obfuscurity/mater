@@ -54,28 +54,23 @@ Sample Response:
 
 ## Deployment
 
-The only required environment variable is `GRAPHITE_URL`. This should be set to the base URL of your Graphite composer (e.g. `https://graphite.yourdomain.com`). If your server requires Basic Auth, you can set the `GRAPHITE_AUTH` variable (e.g. `username:password`).
+The only required environment variable is `GRAPHITE_URL`. This should be set to the base URL of your Graphite composer (e.g. `https://graphite.example.com`). If your server requires Basic Auth, add these to your `GRAPHITE_URL` (e.g. `https://user:pass@graphite.example.com`).
 
 ### Development
 
 ```bash
 $ bundle install
 $ export GRAPHITE_URL=...
-$ export GRAPHITE_AUTH=... # e.g. username:password (optional)
 $ foreman start
-$ open http://127.0.0.1:5000
 ```
 
 ### Production
 
 ```bash
 $ export DEPLOY=production/staging/you
-$ heroku create -r $DEPLOY -s cedar mater-$DEPLOY
+$ heroku create -r $DEPLOY mater-$DEPLOY
 $ heroku config:set -r $DEPLOY GRAPHITE_URL=...
-$ heroku config:set -r $DEPLOY GRAPHITE_AUTH=...
 $ git push $DEPLOY master
-$ heroku scale -r $DEPLOY web=1
-$ heroku open -r $DEPLOY
 ```
 
 ## Caveats
