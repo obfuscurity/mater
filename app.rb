@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'uri'
 require 'rest-client'
 require 'time'
 require 'json'
