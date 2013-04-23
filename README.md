@@ -58,7 +58,7 @@ The only required environment variable is `GRAPHITE_URL`. This should be set to 
 
 Mater supports optional Basic Authentication through Rack::Auth::Basic. Simply set `MATER_AUTH` to your colon-delimited credentials (e.g. `user:test`).
 
-### Development
+### Local
 
 ```bash
 $ bundle install
@@ -67,7 +67,7 @@ $ export MATER_AUTH=... (optional)
 $ foreman start
 ```
 
-### Production
+### Heroku
 
 ```bash
 $ export DEPLOY=production/staging/you
