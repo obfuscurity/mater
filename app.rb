@@ -27,7 +27,7 @@ module Mater
         target.delete('target')
         datapoints = []
         target['datapoints'].each do |datapoint|
-          time = Time.at(datapoint[1]).to_s.split[1].gsub(/\:\d{2}$/, '')
+          time = Time.at(datapoint[1]).strftime("%H:%M")
           datapoints << {
             "title" => time,
             "value" => datapoint[0].to_i
