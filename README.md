@@ -14,11 +14,11 @@ Take the Graphite URL that you want to view on Status Board and replace its Grap
 
 ### API Overview
 
-Each Graphite JSON object (comprised of a `target` and `datapoints`) response is treated as a Status Board `datasequence`. It will use the target name for the datasequence `title`, so you'll typically want to apply a Graphite [alias](http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.alias) for something user-friendly. Set your Graphite `title` param and it will bubble up to your Status Board graph title.
+Each Graphite JSON object (comprised of a `target` and `datapoints`) response is treated as a Status Board `datasequence`. It will use the target name for the datasequence `title`, so you'll typically want to apply a Graphite [alias](http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.alias) for something user-friendly. Set your Graphite `title` param and it will bubble up to your Status Board graph title. Specify a custom refresh rate by setting the `refresh` parameter in the URL.
 
 Sample URI:
 ```
-/render/?from=-1mins&target=aliasByNode(collectd.graphite-example-com.*.cpu-user.value,2)&title=User%20CPU&format=json
+/render/?from=-1mins&target=aliasByNode(collectd.graphite-example-com.*.cpu-user.value,2)&title=User%20CPU&format=json&refresh=30
 ```
 
 Sample Response:
@@ -26,6 +26,7 @@ Sample Response:
 {
   "graph" : {
     "title" : "User CPU",
+    "refreshEveryNSeconds" : 30,
     "datasequences" : [
       {
         "title" : "cpu-0",
@@ -81,7 +82,7 @@ $ git push $DEPLOY master
 
 Status Board is still fairly dumb in its ability to process data. For example, it won't accept float values so we have to convert our data to whole numbers. As I uncover other oddities they will be mentioned here.
 
-## License 
+## License
 
 Mater is distributed under the MIT license.
 
