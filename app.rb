@@ -39,6 +39,7 @@ module Mater
         'graph' => {
           'type' => 'line',
           'title' => params['title'],
+          'refreshEveryNSeconds' => params['refresh'].to_i,
           'datasequences' => data
         }
       }
