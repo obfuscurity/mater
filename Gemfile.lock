@@ -10,8 +10,8 @@ GEM
     json (1.7.7)
     mime-types (2.99.3)
     netrc (0.11.0)
-    rack (1.5.2)
-    rack-protection (1.5.0)
+    rack (1.6.13)
+    rack-protection (1.5.5)
       rack
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
