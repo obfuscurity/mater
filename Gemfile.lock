@@ -7,7 +7,7 @@ GEM
     eventmachine (1.0.3)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    json (1.7.7)
+    json (2.3.0)
     mime-types (2.99.3)
     netrc (0.11.0)
     rack (1.5.2)
